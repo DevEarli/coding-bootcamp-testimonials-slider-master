@@ -1,6 +1,6 @@
 
-const next = document.querySelector('.button .next');
-const prev = document.querySelector('.button .prev');
+const next = document.querySelectorAll('.button .next');
+const prev = document.querySelectorAll('.button .prev');
 const container = document.querySelectorAll(".container");
 
 
@@ -20,10 +20,14 @@ function showSlides(n) {
   
 }
 
-next.addEventListener('click',function(){
+next.forEach(function(e){
+  e.addEventListener('click',function(){
     showSlides(slideIndex += 1);
+  });
 });
 
-prev.addEventListener('click',function(){
+prev.forEach(function(e){
+  e.addEventListener('click',function(){
     showSlides(slideIndex += -1);
+  });
 });
